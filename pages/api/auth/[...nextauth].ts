@@ -21,13 +21,14 @@ export default NextAuth({
         async signIn(params) {
             const res = await prisma.session.findFirst({
                 select: {
-                    userId: true,
+                    user: true,
                 },
                 where: {
-                    userId: params.user.id,
+                    user: {
+                        email: params.user.email
+                    }
                 },
             })
-
             if (res) {
                 return false
             } else {
