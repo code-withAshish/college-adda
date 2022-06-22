@@ -3,8 +3,6 @@ import GithubProvider from "next-auth/providers/github"
 import FacebookProvider from "next-auth/providers/facebook"
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { prisma } from "../../../prisma/db"
-import { getSession } from "next-auth/react"
-import { log } from "console"
 
 
 export default NextAuth({
@@ -29,6 +27,7 @@ export default NextAuth({
                     userId: params.user.id,
                 },
             })
+
             if (res) {
                 return false
             } else {
@@ -39,5 +38,6 @@ export default NextAuth({
     },
     pages: {
         error: "/AuthError"
-    }
+    },
+    secret: process.env.NEXT_AUTH_SECRET,
 })
