@@ -167,7 +167,7 @@ const LoginBox = () => {
                 bg={"black"}
                 onClick={() => {
                   setClicked({ provider: "github", state: true });
-                  signIn("github", { callbackUrl: "localhost:3000" });
+                  signIn("github");
                 }}
                 _hover={{
                   bg: "blackAlpha.800",
