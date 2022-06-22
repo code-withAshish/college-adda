@@ -19,6 +19,7 @@ import {
   Divider,
   HStack,
 } from "@chakra-ui/react";
+import LoginBox from "../components/Login/LoginBox";
 
 const avatars = [
   {
@@ -152,80 +153,7 @@ export default function JoinOurTeam() {
               </Text>
             </Center>
           </Stack>
-          <Box as={"form"} mt={10}>
-            <FormControl isRequired>
-              <FormLabel fontWeight={"semibold"}>Email / Username</FormLabel>
-              <Input
-                type={"text"}
-                bg={"gray.100"}
-                border={0}
-                mt={2}
-                mb={2}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <FormLabel fontWeight={"semibold"}>Password</FormLabel>
-              <Input
-                type={"password"}
-                bg={"gray.100"}
-                border={0}
-                mt={2}
-                mb={2}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <Button
-                type="submit"
-                fontFamily={"heading"}
-                mt={8}
-                w={"full"}
-                bgGradient="linear(to-r, blue.400,purple.400)"
-                color={"white"}
-                _hover={{
-                  bgGradient: "linear(to-r, blue.400,purple.400)",
-                  boxShadow: "xl",
-                }}
-              >
-                Continue
-              </Button>
-              <Stack gap={4} mb="10">
-                <Center height={"20px"}>
-                  <Divider orientation="horizontal" />
-                </Center>
-                <Center>
-                  <Text fontWeight={"medium"} fontSize={"xl"}>
-                    or signup with
-                  </Text>
-                </Center>
-              </Stack>
-              <HStack>
-                <Button
-                  w={"full"}
-                  maxW={"md"}
-                  variant={"outline"}
-                  border={"2px solid"}
-                  _hover={{
-                    bgGradient: "linear(to-b, gray.300,white)",
-                    boxShadow: "xl",
-                  }}
-                />
-                <Button
-                  w={"full"}
-                  maxW={"md"}
-                  variant={"solid"}
-                  bg={"black"}
-                  _hover={{
-                    bgGradient: "linear(to-b, black,gray.600)",
-                    boxShadow: "xl",
-                  }}
-                />
-              </HStack>
-            </FormControl>
-          </Box>
+          <LoginBox />
         </Stack>
       </Container>
       <Blur

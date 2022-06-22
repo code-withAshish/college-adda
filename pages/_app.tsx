@@ -7,12 +7,11 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "gray.300",
+        bg: "gray.200",
       },
     },
   },
 });
-
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter();
   return (
