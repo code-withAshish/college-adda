@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
 import { FaGithub } from "react-icons/fa";
-import { BsFacebook } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
 import { signIn, signOut, useSession } from "next-auth/react";
 import AuthModal from "./AuthModal";
@@ -29,7 +29,7 @@ const SignInSchema = Yup.object().shape({
 });
 
 interface ButtonClickedProps {
-  provider: "github" | "facebook" | "credential" | null;
+  provider: "github" | "google" | "credential" | null;
   state: boolean;
 }
 
@@ -150,15 +150,18 @@ const LoginBox = () => {
             </Stack>
             <HStack>
               <Button
-                leftIcon={<BsFacebook color="white" size={"20px"} />}
                 w={"full"}
                 maxW={"md"}
-                colorScheme={"facebook"}
+                variant={"outline"}
+                border={"2px"}
+                borderColor={"gray.500"}
+                leftIcon={<FcGoogle size={"20px"} />}
                 onClick={() => {
-                  setClicked({ provider: "facebook", state: true });
-                  signIn("facebook");
+                  setClicked({ provider: "google", state: true });
+                  signIn("google");
                 }}
               />
+
               <Button
                 leftIcon={<FaGithub color="white" size={"20px"} />}
                 w={"full"}
