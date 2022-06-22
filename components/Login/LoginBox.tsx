@@ -54,7 +54,7 @@ const LoginBox = () => {
     });
   }
   useEffect(() => {
-    if (status === "unauthenticated" || clicked.state) {
+    if (status === "unauthenticated" && clicked.state) {
       setModalState(true);
     } else {
       setModalState(false);
