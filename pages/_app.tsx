@@ -1,7 +1,8 @@
 import { ChakraProvider, extendTheme, ScaleFade } from "@chakra-ui/react";
-import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { SessionProvider } from "next-auth/react";
+import NavBar from "../components/NavBar";
+import { AppProps } from "next/app";
 
 const theme = extendTheme({
   styles: {
@@ -12,12 +13,15 @@ const theme = extendTheme({
     },
   },
 });
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter();
+
   return (
     <ChakraProvider theme={theme}>
       <SessionProvider>
         <ScaleFade key={router.route} initialScale={0.9} in={true}>
+          <NavBar />
           <Component {...pageProps} />
         </ScaleFade>
       </SessionProvider>

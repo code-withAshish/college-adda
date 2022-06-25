@@ -129,15 +129,6 @@ const LoginBox = () => {
             >
               Continue
             </Button>
-            <Button
-              variant={"solid"}
-              onClick={() => {
-                signOut();
-              }}
-            >
-              Sign out
-            </Button>
-
             <Stack gap={4} mb="10">
               <Center height={"20px"}>
                 <Divider orientation="horizontal" />

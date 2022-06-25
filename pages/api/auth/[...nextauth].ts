@@ -35,7 +35,6 @@ export default NextAuth({
                 return true
             }
         }
-
     },
     pages: {
         error: "/AuthError"
