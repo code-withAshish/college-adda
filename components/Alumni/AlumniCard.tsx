@@ -10,6 +10,8 @@ import {
   Link,
   Badge,
   useColorModeValue,
+  Skeleton,
+  SkeletonCircle,
 } from "@chakra-ui/react";
 
 interface AlumniCardProps {
@@ -26,17 +28,12 @@ export default function AlumniCard(props: AlumniCardProps) {
     <Center py={6}>
       <Box
         maxW={"320px"}
-        w={"full"}
+        minW={"320px"}
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"2xl"}
         rounded={"lg"}
         p={6}
         textAlign={"center"}
-        _hover={{
-          transform: "scale(1.05)",
-          transition: "all 0.2s ease-in-out",
-          cursor: "pointer",
-        }}
       >
         <Avatar
           size={"xl"}
@@ -45,6 +42,7 @@ export default function AlumniCard(props: AlumniCardProps) {
           mb={4}
           pos={"relative"}
         />
+
         <Heading fontSize={"2xl"} fontFamily={"body"}>
           {props.name}
         </Heading>
@@ -61,6 +59,8 @@ export default function AlumniCard(props: AlumniCardProps) {
           textAlign={"center"}
           color={useColorModeValue("gray.700", "gray.400")}
           px={3}
+          minH={"100px"}
+          noOfLines={3}
         >
           {props.description}
         </Text>

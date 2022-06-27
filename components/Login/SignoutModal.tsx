@@ -45,7 +45,11 @@ export default function SignoutModal() {
           <AlertDialogCloseButton />
           <AlertDialogBody>Are you sure you want to Sign Out?</AlertDialogBody>
           <AlertDialogFooter>
-            <Button ref={cancelRef} onClick={onClose}>
+            <Button
+              //@ts-ignore
+              ref={cancelRef}
+              onClick={onClose}
+            >
               No
             </Button>
             <Button colorScheme="red" ml={3} onClick={handleSignOut}>

@@ -50,3 +50,13 @@ model User {
   accounts      Account[]
   sessions      Session[]
 }
+
+model Alumni {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  batch       Int
+  image       String?
+  description String
+  course      String
+  branch      String
+}

@@ -1,7 +1,9 @@
 import {
+  Box,
   Grid,
   GridItem,
   Heading,
+  SimpleGrid,
   Stack,
   Text,
   useColorModeValue,
@@ -29,18 +31,13 @@ export const getStaticProps: GetStaticProps = async (
 
 function Home({ posts }: { posts: Post[] }) {
   return (
-    <Grid
-      h={["100vh", "100vh", "100vh"]}
-      templateRows={"repeat(1,1fr)"}
-      templateColumns={"repeat(9,1fr)"}
-    >
-      <GridItem
-        colSpan={2}
+    <SimpleGrid h={["100vh", "100vh", "100vh"]} columns={{ sm: 1, md: 3 }}>
+      <Box
+        display={{ base: "none", md: "block" }}
         bgGradient={"linear(to-r,blue.200,purple.100)"}
-      ></GridItem>
-      <GridItem
+      ></Box>
+      <Box
         borderLeft={"6px solid #fff"}
-        colSpan={4}
         bgGradient={"linear(to-r,blue.200,purple.200)"}
         overflowY={"scroll"}
         overflowX={"hidden"}
@@ -68,11 +65,14 @@ function Home({ posts }: { posts: Post[] }) {
             );
           })}
         </Stack>
-      </GridItem>
-      <GridItem colSpan={3} bgGradient={"linear(to-r,blue.200,purple.200)"}>
+      </Box>
+      <Box
+        display={{ base: "none", md: "block" }}
+        bgGradient={"linear(to-r,blue.200,purple.200)"}
+      >
         <TestComponent />
-      </GridItem>
-    </Grid>
+      </Box>
+    </SimpleGrid>
   );
 }
 
